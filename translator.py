@@ -1,6 +1,6 @@
 import requests
 from telegram.ext import ConversationHandler
-from keyboards import *
+from keyboards import languages_keyboard, start_keyboard
 lang = {
     'Русский': 'ru',
     'Английский': 'en',
@@ -27,7 +27,7 @@ def translator(text, lang1, lang2):
 
 
 def translate(update, context):
-    update.message.reply_text('С какого языка производится перевод?', reply_markup=markup2)
+    update.message.reply_text('С какого языка производится перевод?', reply_markup=languages_keyboard)
     return 1
 
 
@@ -45,12 +45,12 @@ def second_lang_response(update, context):
 
 def third_lang_response(update, context):
     text = update.message.text
-    update.message.reply_text("Направление перевода осуществляется с", reply_markup=markup1)
+    update.message.reply_text("Направление перевода осуществляется с", reply_markup=start_keyboard)
     update.message.reply_text(f'{context.user_data["orig_lang"]} ---> {context.user_data["translation_lang"]}')
     update.message.reply_text(translator(text, context.user_data["orig_lang"], context.user_data["translation_lang"]))
     return ConversationHandler.END
 
 
 def stop(update, context):
-    update.message.reply_text("Чтобы начать поиск нажмите /search", reply_markup=markup1)
+    update.message.reply_text("Что поищем?", reply_markup=start_keyboard)
     return ConversationHandler.END

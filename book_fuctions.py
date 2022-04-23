@@ -1,7 +1,6 @@
 from telegram.ext import ConversationHandler
 from keyboards import *
 import requests
-import urllib
 from constants import api_key
 
 
@@ -10,13 +9,13 @@ def book(update, context):
     return 1
 
 
-# remade
 def first_book_response(update, context):
     context.user_data['search_method'] = update.message.text
     if context.user_data['search_method'] == 'По названию':
         update.message.reply_text('Введите название книги или ключевые слова')
     elif context.user_data['search_method'] == 'По автору':
-        update.message.reply_text('Введите автора книги и ключевые слова из книги')
+        update.message.reply_text('Введите автора книги затем ключевые слова из книги на разных строчках')
+
     return 2
 
 

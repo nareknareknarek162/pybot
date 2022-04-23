@@ -4,6 +4,7 @@ from translator import *
 from constants import TOKEN
 from general_functions import *
 from book_fuctions import *
+from picture_functions import *
 
 
 def main():
@@ -31,6 +32,7 @@ def main():
     )
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("painting", painting))
     dp.add_handler(translate_handler)
     dp.add_handler(book_handler)
     updater.start_polling()

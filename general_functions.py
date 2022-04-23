@@ -9,7 +9,7 @@ def start(update, context):
 
 def help(update, context):
     update.message.reply_text('Вы можете искать книги или картины \n'
-                              'Для поиска используйте команду книг используйте команду /book\n '
-                              'Для поиска картин используйет команду /painting', reply_markup=start_keyboard)
+                              'Для поиска используйте книг используйте команду /book\n '
+                              'Для поиска картин используйте команду /painting', reply_markup=start_keyboard)
     update.message.reply_text(
         'Если у вас возникли проблемы с поиском или названием воспользуйтесь переводчиком /translate')

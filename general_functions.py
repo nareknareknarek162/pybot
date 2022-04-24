@@ -5,6 +5,7 @@ def start(update, context):
     update.message.reply_text(
         'Доброго времени суток. Я бот для поиска книг и картин. Чтобы узнать что я могу воспользуйтесь командой /help',
         reply_markup=start_keyboard)
+    update.message.reply_text('Что поищем?')
 
 
 def help(update, context):

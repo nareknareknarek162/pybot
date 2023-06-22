@@ -1,1 +1,1 @@
-# pybot of mr.Andreasian
+# pybot of Andreasian
